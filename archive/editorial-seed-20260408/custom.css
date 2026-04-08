@@ -1,0 +1,45 @@
+/* CORTEX_DOCS Aesthetic: Industrial Noir 2026 */
+/* Base: #0A0A0A | Accent: #2B3BE5 */
+
+:root {
+	/* CORTEX Azul / Láser Accent (#2B3BE5) */
+	--sl-color-accent-low: hsl(235, 78%, 20%);
+	--sl-color-accent: hsl(235, 78%, 53%);
+	--sl-color-accent-high: hsl(235, 78%, 80%);
+	--sl-color-text-accent: var(--sl-color-accent-high);
+
+	/* Industrial Noir Background (#0A0A0A) */
+	--sl-color-black: hsl(0, 0%, 0%);
+	--sl-color-white: hsl(0, 0%, 100%);
+	
+	/* Fondo estructural CORTEX */
+	--sl-color-bg: hsl(0, 0%, 4%);
+	--sl-color-bg-nav: hsl(0, 0%, 2%);
+	--sl-color-bg-sidebar: hsl(0, 0%, 3%);
+
+	/* Zero-Rhetoric typography framework */
+	--sl-font-system: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+/* Light mode override to force Dark Mode or high-contrast inversion */
+:root[data-theme='light'] {
+	--sl-color-accent-low: hsl(235, 78%, 80%);
+	--sl-color-accent: hsl(235, 78%, 53%);
+	--sl-color-accent-high: hsl(235, 78%, 20%);
+	--sl-color-text-accent: var(--sl-color-accent-low);
+
+	/* Inverse void */
+	--sl-color-bg: hsl(0, 0%, 96%);
+	--sl-color-bg-nav: hsl(0, 0%, 98%);
+	--sl-color-bg-sidebar: hsl(0, 0%, 97%);
+}
+
+/* Reducción de padding inútil - Law of Signal */
+.sl-container {
+	max-width: 90ch; /* Restringe la lectura para exergía focal */
+}
+
+/* Opcional: Acentos de borde tipo Consola para un look más industrial */
+.sidebar, .right-sidebar {
+	border-color: rgba(43, 59, 229, 0.15) !important;
+}
