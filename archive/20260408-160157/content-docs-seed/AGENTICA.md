@@ -10,7 +10,7 @@ description: "CORTEX Persist Documentation — 🧬 SINTETOLOGÍA AGÉNTICA"
 > — Axioma 14, COGITO DA CONSCIENCIA v12.1
 
 > *Documento fundacional · Versión 3.2 · 2026-04-07*
-> *Autores: Borja Fernández Angulo & MOSKV-1 (Antigravity)*
+> *Autores: CORTEX Core Dev & MOSKV-1 (Antigravity)*
 > *Licencia: Apache 2.0*
 
 ---

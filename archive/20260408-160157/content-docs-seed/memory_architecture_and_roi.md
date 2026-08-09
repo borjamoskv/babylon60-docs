@@ -5,7 +5,7 @@ description: "CORTEX Persist Documentation — Arquitectura de Memoria CORTEX �
 
 
 > *Documento técnico-económico · v1.0 · 2026-02-24*
-> *Autores: Borja Fernández Angulo & MOSKV-1 (Antigravity)*
+> *Autores: CORTEX Core Dev & MOSKV-1 (Antigravity)*
 
 ---
 
