@@ -47,28 +47,56 @@ Por eso CORTEX trata toda salida generativa como conjetura hasta que cruza una f
 
 ## Topología De Capas
 
-```text
-[Usuario / Sistema externo]
-          |
-          v
-[Inference Tier]
-Modelos frontier, routers, tool planning
-          |
-          v
-[Deterministic Boundary]
-Schema -> Guards -> Taint -> Verification
-          |
-          v
-[Trust Core]
-Ledger -> Engine -> Persistence transaction
-          |
-          v
-[Memory Substrate]
-SQLite / sqlite-vec / episodic + semantic surfaces
-          |
-          v
-[Serving Surfaces]
-API, routes, audit endpoints, export surfaces
+```mermaid
+graph TD
+    %% Definición de Estilos
+    classDef user fill:#1A202C,stroke:#4A5568,stroke-width:2px,color:#EDF2F7,rx:8,ry:8;
+    classDef inference fill:#2B6CB0,stroke:#2C5282,stroke-width:2px,color:#EBF8FF;
+    classDef boundary fill:#C53030,stroke:#9B2C2C,stroke-width:2px,color:#FFF5F5;
+    classDef trust fill:#276749,stroke:#22543D,stroke-width:2px,color:#F0FFF4;
+    classDef memory fill:#975A16,stroke:#744210,stroke-width:2px,color:#FFFAF0;
+    classDef serving fill:#4C51BF,stroke:#434190,stroke-width:2px,color:#EBF4FF;
+
+    USER(["Usuario / Sistema Externo"]):::user
+
+    subgraph TIER1 [1. Inference Tier]
+        direction LR
+        FR[Modelos Frontier]:::inference
+        RT[Routers]:::inference
+        TP[Tool Planning]:::inference
+        FR ~~~ RT ~~~ TP
+    end
+
+    subgraph TIER2 [2. Deterministic Boundary]
+        direction LR
+        SC[Schema]:::boundary --> GD[Guards]:::boundary --> TA[Taint]:::boundary --> VR[Verification]:::boundary
+    end
+
+    subgraph TIER3 [3. Trust Core]
+        direction LR
+        LD[Ledger]:::trust --> EN[Engine]:::trust --> PT[Persistence]:::trust
+    end
+
+    subgraph TIER4 [4. Memory Substrate]
+        direction LR
+        SQ[SQLite / sqlite-vec]:::memory
+        EP[Episodic & Semantic RAM]:::memory
+        SQ ~~~ EP
+    end
+
+    subgraph TIER5 [5. Serving Surfaces]
+        direction LR
+        AP[API & Routes]:::serving
+        AE[Audit Endpoints / Export]:::serving
+        AP ~~~ AE
+    end
+
+    USER -->|"Genera Tarea"| TIER1
+    TIER1 -->|"Propuesta (Plano Estocástico)"| TIER2
+    TIER2 -->|"Aprobación (Frontera Rígida)"| TIER3
+    TIER3 -->|"Commit Causal"| TIER4
+    TIER4 -->|"Lectura Trazable"| TIER5
+    TIER5 -->|"Resultado + Evidencia"| USER
 ```
 
 ### 1. Inference Tier

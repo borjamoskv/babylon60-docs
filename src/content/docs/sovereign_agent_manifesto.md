@@ -822,6 +822,21 @@ An agent doesn't just *know* things. It knows *how much it trusts* what it knows
 
 ---
 
+## 12. Matriz de Refutación Empírica (C5-REAL) {#12-matriz-de-refutacion-empirica}
+
+Bajo el protocolo **PSAFE v3.0**, la arquitectura del Agente Soberano no se evalúa mediante la reflexión autocomplaciente del LLM, sino mediante la validación determinista de sus límites físicos, criptográficos y entrópicos.
+
+| Axioma / Principio | Refutación Automatizable | Punto de Verificación | Mensaje de Diagnóstico (L3) |
+|--------------------|--------------------------|-----------------------|-----------------------------|
+| **[AX-III] Tether** | `assert!(sys.memory_usage < tether.max_ram)` | Daemon de SO / Middleware | `CORTEX-ERR: RAM excede límite físico de autólisis.` |
+| **Ω₃ Byzantine Default** | `assert!(verify_merkle_root(current_batch))` | Trust Engine Ledger | `CORTEX-ERR: Violación de integridad Merkle.` |
+| **Ω₅ Antifragile** | `assert!(nemesis.contains(last_error.antibody))` | Ciclo de Degradación (CPTA) | `CORTEX-WARN: El error no forjó un anticuerpo. Riesgo de calcificación.` |
+| **L4 Degradation** | `assert!(execution.level >= 3)` | Orchestrator (AETHER) | `CORTEX-ERR: Fallo silencioso (L0-L2) detectado. Falta contexto de recuperación.` |
+
+> **Invariante C5-REAL:** Un fallo sin aserción automatizable es entropía oculta. Todo principio del manifiesto debe traducirse en un test de integración determinista en la pipeline CI/CD.
+
+---
+
 ## Summary
 
 The industry says: *"Our agent calls tools and uses RAG."*
