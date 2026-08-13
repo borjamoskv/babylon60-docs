@@ -1,24 +1,23 @@
-# CORTEX Docs
+# BABYLON-60 Docs
 
-This repository is now the dedicated documentation surface for CORTEX.
+Official documentation and architectural specifications for the **BABYLON-60** ecosystem — tamper-evident cryptographic ledger, BFT consensus invariants, and autonomous AI agent runtime.
 
-## What Lives Here
+## Structure & Contents
 
-- The long-form docs corpus under `src/content/docs`
-- The Starlight site configuration for `cortexpersist.com/docs`
-- The current docs theme, assets, and content schema
-- An archived seed of the earlier editorial prototype under `archive/`
+- **Core Documentation**: Comprehensive guide & specifications under `src/content/docs`
+- **Starlight / Astro Site**: Modern documentation engine powered by Astro & Starlight
+- **Content Schema**: Type-safe doc collections and system invariants
+- **Archived Drafts**: Preserved legacy documentation seeds under `archive/`
 
-## Commands
+## Quick Start
 
 | Command | Action |
 | :--- | :--- |
 | `npm install` | Install Astro/Starlight dependencies |
-| `npm run dev` | Start the docs site locally |
-| `npm run build` | Build the static docs site |
-| `npm run preview` | Preview the production build |
+| `npm run dev` | Start the local development documentation server |
+| `npm run build` | Build production static documentation assets |
+| `npm run preview` | Preview production documentation build |
 
-## Notes
+## System Invariants
 
-- The previous mixed web/docs shell has been extracted out of the Python core repository.
-- The content archive in `archive/` preserves the smaller curated draft that existed before the corpus migration.
+All documentation adheres to the **C5-REAL Epistemological Constitution** and zero-anergy semantic standards of the BABYLON-60 architecture.
